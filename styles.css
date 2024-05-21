@@ -42,6 +42,20 @@ nav ul li a {
     text-decoration: none;
 }
 
+.language-switcher {
+    font-size: 1em;
+}
+
+.language-switcher a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 0.5em;
+}
+
+.language-switcher a.active {
+    font-weight: bold;
+}
+
 .hero {
     background: url('hero-image.jpg') no-repeat center center/cover;
     height: 100vh;
