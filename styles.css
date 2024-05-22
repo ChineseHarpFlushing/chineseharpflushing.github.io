@@ -6,24 +6,52 @@ body {
     color: #333;
 }
 
+.container {
+    max-width: 1200px;  /* Control the maximum width */
+    margin: 0 auto;     /* Center the container */
+    padding: 0 1em;     /* Add some padding for small screens */
+}
+
 header {
-    background-color: #fff;
+    position: relative;
     color: #333;
-    padding: 1em 0;
+    padding: 2em 0;
     border-bottom: 1px solid #ddd;
 }
 
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
 header .container {
+    position: relative;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2em;
 }
 
 header .logo h1 {
     margin: 0;
     font-size: 1.5em;
-    color: #b81c23; /* Use red as an accent */
+    color: #fff; /* Change text color to contrast with the background */
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+}
+
+nav .container {
+    display: flex;
+    justify-content: center;
 }
 
 nav ul {
@@ -34,12 +62,18 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 2em;
+    margin: 0 1em;
 }
 
 nav ul li a {
-    color: #333;
+    color: #fff; /* Change link color to contrast with the background */
     text-decoration: none;
+    padding: 1em;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #444; /* Add a hover effect */
 }
 
 .language-switcher {
@@ -47,7 +81,7 @@ nav ul li a {
 }
 
 .language-switcher a {
-    color: #333;
+    color: #fff; /* Change link color to contrast with the background */
     text-decoration: none;
     margin-left: 0.5em;
 }
@@ -57,20 +91,30 @@ nav ul li a {
 }
 
 .hero {
-    background: url('hero-image.jpg') no-repeat center center/cover;
+    position: relative;
+    background: #000; /* Fallback color */
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
+    overflow: hidden;
 }
 
 .hero .container {
-    max-width: 600px;
-    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
-    padding: 2em;
-    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero .hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
 }
 
 .hero h2 {
@@ -105,6 +149,19 @@ section:nth-child(even) {
 section h2 {
     font-size: 2em;
     margin-bottom: 1em;
+}
+
+.faculty-member {
+    text-align: left;
+    margin-bottom: 2em;
+}
+
+.faculty-portrait {
+    width: 200px;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
 }
 
 footer {
